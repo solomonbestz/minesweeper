@@ -13,8 +13,12 @@ class Cell:
         )
         self.cell_btn_object = btn
 
-    def cell_place(self, x, y):
-        self.cell_btn_object.place(
-            x = x,
-            y = y
+    def cell_place(self, column, row):
+        self.cell_btn_object.grid(
+            column = column,
+            row = row
         )
+
+    def add_cell(self, frame, color, text, column, row):
+        self.create_btn_object(frame, color, text)
+        self.cell_place(column, row)
