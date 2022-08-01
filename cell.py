@@ -1,9 +1,12 @@
 from tkinter import Button
+import random
 
 class Cell:
-    def __init__(self, is_mine=False):
+    def __init__(self, x, y, is_mine=False):
         self.is_mine = is_mine
         self.cell_btn_object = None
+        self.x = x
+        self.y = y
 
     def create_btn_object(self, location, bgcolor, text):
         btn = Button(
@@ -34,3 +37,7 @@ class Cell:
     def add_cell(self, frame, color, text, column, row):
         self.create_btn_object(frame, color, text)
         self.cell_place(column, row)
+
+    @staticmethod
+    def randomize_mines():
+        pass

@@ -6,7 +6,6 @@ from cell import Cell
 
 
 root = Tk()
-cell = Cell()
 
 if __name__ == '__main__':
     # Override the windows settings
@@ -57,7 +56,8 @@ if __name__ == '__main__':
         else:
             settings.COLOR_COUNT = 0
         for column in range(settings.GRID_SIZE):
-            cell.add_cell(center_frame, settings.COLORS[settings.COLOR_COUNT], settings.BTN_NUM, column,  row)
+            cell = Cell(row, column)
+            cell.add_cell(center_frame, settings.COLORS[settings.COLOR_COUNT], f"{row},{column}", column,  row)
             settings.COLOR_COUNT += 1
             if settings.COLOR_COUNT == 2:
                 settings.COLOR_COUNT = 0
